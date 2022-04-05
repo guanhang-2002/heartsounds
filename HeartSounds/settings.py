@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ot8252#5urpq_h4$y3pn!mml4koe$1nl_)y%udl72q79kq+!kk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -77,13 +77,17 @@ WSGI_APPLICATION = 'HeartSounds.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'heartsoundsdb',
+    #     'USER': 'root',
+    #     'PASSWORD': '214890',
+    #     'HOST': 'localhost',
+    #     'PORT': '3306',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heartsoundsdb',
-        'USER': 'root',
-        'PASSWORD': '214890',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -208,3 +212,7 @@ APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+#Heroku settings
+import django_heroku
+django_heroku.settings(locals())
