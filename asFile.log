@@ -1,0 +1,32 @@
+2022-03-31 13:01:00.634308+00:00-----
+2022-03-31 21:01:10,397 file hello
+2022-03-31 21:02:10,219 file hello
+2022-03-31 21:03:10,509 file hello
+2022-03-31 21:04:10,239 file hello
+2022-03-31 21:05:10,211 file hello
+2022-03-31 21:05:16,099 file <re.Match object; span=(0, 3), match='44s'>
+2022-03-31 21:05:16,100 file <re.Match object; span=(0, 3), match='3Hz'>
+2022-03-31 21:05:16,100 file 3Hz
+2022-03-31 21:05:16,234 file 用户id1上传文件009a.dat
+2022-03-31 21:06:10,183 file hello
+2022-03-31 21:07:10,617 file hello
+2022-03-31 21:08:10,209 file hello
+2022-03-31 21:09:10,681 file hello
+2022-03-31 21:10:10,163 file hello
+2022-03-31 21:11:10,603 file hello
+2022-03-31 21:11:58,322 file Added job 'clear_log'.
+2022-03-31 21:11:58,323 file Added weekly job: 'delete_old_job_executions'.
+2022-03-31 21:11:58,323 file Starting scheduler...
+2022-03-31 21:12:16,002 file 暂无
+2022-03-31 21:14:03,151 file 暂无
+2022-03-31 21:15:52,774 file 暂无
+2022-03-31 21:17:01,597 file C:\HeartSound\media\005a.dat
+2022-03-31 21:19:10,636 file C:\HeartSound\media\005a.dat
+2022-03-31 21:21:59,395 file C:\HeartSound\media\005a.dat
+2022-03-31 21:25:18,127 file C:\HeartSound\media\005a.dat
+2022-03-31 21:25:33,458 file C:\HeartSound\media\005a.dat
+2022-03-31 21:26:37,557 file 用户id1上传文件temptest.jpg
+2022-03-31 21:26:43,183 file C:\HeartSound\media\temptest.jpg
+2022-03-31 21:29:22,177 file guanh下载C:\HeartSound\media\temptest.jpg文件
+2022-03-31 21:29:33,314 file guanh下载C:\HeartSound\media\temptest.jpg文件
+2022-03-31 21:29:47,685 file guanh 下载 C:\HeartSound\media\temptest.jpg 文件

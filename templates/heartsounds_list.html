@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">心音文件名</th>
+                <th scope="col">采样来源</th>
+                <th scope="col">采样时间</th>
+                <th scope="col">采样方式</th>
+                <th scope="col">采样频率</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for heartsounds in heartsounds_introduce_list %}
+                <tr>
+                    <th scope="row">{{ heartsounds.id }}</th>
+                    <td><a href="{% url 'index:file_detail' heartsounds.id %} " target="_blank" class="text-decoration-none">{{ heartsounds.name }}</a></td>
+                    <td>{{ heartsounds.sample_from }}</td>
+                    <td>{{ heartsounds.duration_for_sample }}</td>
+                    <td>{{ heartsounds.style_of_sampling }}</td>
+                    <td>{{ heartsounds.sample_frequency }}</td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% if is_paginated %}
+        <div class="pagination-lg">
+            <span class="page-link">
+                {% if page_obj.has_previous %}
+                    <a href="{% url 'index:file_list' page_obj.previous_page_number %}">previous</a>
+                {% endif %}
+                The {{ page_obj.number }} page
+                {% if page_obj.has_next %}
+                    <a href="{% url 'index:file_list' page_obj.next_page_number %}">next</a>
+                {% endif %}
+                <br><br>
+                <a href="{% url 'index:file_list' 1 %}">The first page</a>
+            <span class="page-current">
+                total {{ page_obj.paginator.num_pages }} page
+            </span>
+                <a href="{% url 'index:file_list' page_obj.paginator.num_pages %}">The last page</a>
+            </span>
+        </div>
+    {% endif %}
+
+
+{% endblock %}

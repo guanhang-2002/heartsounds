@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <table class="table">
+        <thred>
+            <tr>
+                <th scope="col">心音名</th>
+                <th scope="col">描述</th>
+                <th scope="col">创建时间</th>
+            </tr>
+        </thred>
+        <tbody>
+        <tr>
+            <td>{{ heartsounds_list.name }}</td>
+            <td>{{ heartsounds_list.description }}</td>
+            <td>{{ heartsounds_list.created_time }}</td>
+            <td><span><a href="{% url 'index:file_download' heartsounds_list.id %}" class="text-decoration-none" >download</a></span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

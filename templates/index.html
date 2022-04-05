@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+心音主页
+{% endblock %}
+
+        <!-- 内容主界面 -->
+{% block content %}
+    
+    {% block user %}
+    {{ user.name }}
+    {% endblock %}
+    {% if repeatloginmessage %}
+        <div>
+            <p class="text-center"><strong>{{ repeatloginmessage }}</strong></p>
+        </div>
+    {% endif %}
+
+    <div>
+    <a href="{% url 'index:upload' %}"  class="btn btn-outline-success">uploade</a>
+    <a href="{% url 'index:file_list' page=1 %}" class="btn btn-outline-success">file_list</a>
+    </div>
+{% endblock %}

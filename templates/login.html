@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}
+心音登录
+{% endblock %}
+<!-- 内容主界面 -->
+{% block content %}
+<br>
+<br>
+<div class="col-md-7 col-lg-8">
+    <form action="" method="post">
+        {% csrf_token %}
+        <!-- 内容主界面 -->
+        {{ form.subject.errors }}
+        <div>
+            {{ form.subject.errors }}
+            <lable >
+                用户名:
+            </lable>
+            {{ form.username }}
+            <lable>
+                密码:
+                {{ form.password }}
+            </lable>
+        </div>
+            <input type="submit" value="登录" class="btn btn-outline-success">
+    </form>
+    <a href="{% url 'index:register' %}"><input type="submit" value="没有账号,创建一个?" class="btn btn-outline-success" ></a>
+    <a href="{% url 'index:forgetpasswordcode' %}"><input type="submit" value="忘记密码?" class="btn btn-outline-success"></a>
+</div>
+
+{% endblock %}

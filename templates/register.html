@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}
+心音注册
+{% endblock %}
+        <!-- 内容主界面 -->
+{% block content %}
+    <div class="container-fluid">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+{% endblock %}

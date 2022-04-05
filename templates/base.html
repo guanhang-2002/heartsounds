@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh" class="h-100 translated-ltr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <title>{% block title %}
+
+    {% endblock %}</title>
+</head>
+
+
+
+<body class="d-flex flex-column h-100">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/" >HeartSounds</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index:login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    {% if user.username %}
+                        <a href="{% url 'index:logout' %}" class="nav-link">logout</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                <span class="navbar-brand">
+                    {% if user.username %}
+                    {{ user }}
+                    {% endif %}
+                </span>
+                </li>
+            </ul>
+            <form class="d-flex" action="/" method="post">
+                <input class="form-control me-2" type="search" placeholder="暂时没有做该功能" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<main class="flex-shrink-0">
+{% if repetloginerror %}
+    {{ repetloginerror }}
+{% endif %}
+    {% block content %}
+
+    {% endblock %}
+</main>
+
+
+<!-- 最下面版权区 -->
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <p class="text-center text-muted">© 2020 心音项目组</p>
+    </div>
+</footer>
+</body>
+
+
+
